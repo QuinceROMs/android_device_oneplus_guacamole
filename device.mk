@@ -17,7 +17,6 @@ PRODUCT_COPY_FILES += \
 # Boot animation
 TARGET_SCREEN_HEIGHT := 3120
 TARGET_SCREEN_WIDTH := 1440
-TARGET_BOOT_ANIMATION_RES := 1440
 
 # Camera
 PRODUCT_PACKAGES += \
@@ -33,35 +32,34 @@ PRODUCT_COPY_FILES += \
 # Fastboot
 TARGET_BOARD_FASTBOOT_INFO_FILE := $(LOCAL_PATH)/fastboot-info.txt
 
-# GooglePhotos
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/pixel_2016_exclusive.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/sysconfig/pixel_2016_exclusive.xml
-
-# Recorder
-TARGET_SUPPORTS_GOOGLE_RECORDER := true
-
-# arcore
-TARGET_INCLUDE_STOCK_ARCORE := true
-
-# AIcore
-TARGET_INCLUDE_STOCK_AICORE := false
-
-# Live Wallpapers
-TARGET_INCLUDE_LIVE_WALLPAPERS := true
-
-# Face Unlock
-TARGET_FACE_UNLOCK_SUPPORTED := true
+# AOSP Face Unlock
 TARGET_SUPPORTS_64_BIT_APPS := true
+TARGET_SUPPORTS_GFU := false
 
 # Quick Tap
 TARGET_SUPPORTS_QUICK_TAP := true
 
-# Maintainer
-PIXELAGE_MAINTAINER := Quince
+# Aperture
+PRODUCT_NO_CAMERA := false
+
+# Blur
+TARGET_ENABLE_BLUR := true
+
+# Udfps
+TARGET_HAS_UDFPS := true
+
+# GApps
+WITH_GMS := true
+
+# Pixel Launcher
+TARGET_DEFAULT_PIXEL_LAUNCHER := false
+
+# Lawnchair
+TARGET_PREBUILT_LAWNCHAIR_LAUNCHER := true
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
-    $(LOCAL_PATH)/overlay-pixelage
+    $(LOCAL_PATH)/overlay-lineage
 
 PRODUCT_PACKAGES += \
     OPlusFrameworksResTarget \
@@ -71,7 +69,7 @@ PRODUCT_PACKAGES += \
 
 # AlertSlider
 PRODUCT_PACKAGES += \
-    SystemUIOverlay \
+    RisingSystemUIOverlay \
     AlertSliderOverlay
 
 # Shipping API

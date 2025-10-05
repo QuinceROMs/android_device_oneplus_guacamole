@@ -1,4 +1,4 @@
 runtime_resource_overlay {
-    name: "SystemUIOverlay",
+    name: "RisingSystemUIOverlay",
     product_specific: true,
 }
